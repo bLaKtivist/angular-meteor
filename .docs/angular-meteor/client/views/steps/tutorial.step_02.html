@@ -139,19 +139,22 @@ Create a new model property in the controller (inside app.js) and bind to it in 
 
 Then add a new binding to `index.ng.html`:
 
-    $scope.name = "World";
+   <p>Hello, {{dstache}}name}}!</p>
 
 Verify that it says "Hello, World!".
 
 Create a repeater in index.ng.html that constructs a simple table:
 
-    <p>Hello, {{dstache}}name}}!</p>
+    <table>
+      <tr><th>row number</th></tr>
+      <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{dstache}}i}}</td></tr>
+    </table>
 
 Now, make the list 1-based by incrementing i by one in the binding:
 
     <table>
-      <tr><th>row number</th></tr>
-      <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{dstache}}i}}</td></tr>
+   <tr><th>row number</th></tr> 
+    <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i+1}}</td></tr>
     </table>
 
 Extra points: try and make an 8x8 table using an additional ng-repeat.
